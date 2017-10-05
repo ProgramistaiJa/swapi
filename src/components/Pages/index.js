@@ -6,7 +6,7 @@ class Pages extends React.Component {
         return (
             <div>
                 <Link to="/actors">Page 1</Link>
-                <Link to="/actors/2">Page 2</Link>
+                {/*<Link to="/actors/2">Page 2</Link>*/}
             </div>
         )
     }
