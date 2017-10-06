@@ -25,10 +25,18 @@ class Actors extends React.Component {
 
 
         //pobieranie postaci
-        fetch('https://swapi.co/api/people/')
+        console.log(this.props.match)
+        console.log(this.props.match.params.pageId)
+        console.log(`https://swapi.co/api/people/${this.props.match.params.pageId}/`)
+        //https://swapi.co/api/people/?page=2",
+
+        fetch(
+        this.props.match.params.pageId
+            ? `https://swapi.co/api/people/?page=${this.props.match.params.pageId}`
+            :'https://swapi.co/api/people/')
+        //fetch(`https://swapi.co/api/people/${id}/`)
             .then(response => response.json())
             .then(data=>data.results)
-            //.then(people=>people.map(person => [person.name, person.gender, person.films]))
             .then(people=>{
                 console.log(people)
                 return people
@@ -61,6 +69,7 @@ class Actors extends React.Component {
             <div>
 
                 <People
+
                     people = {people}
                     films = {films}
                     peopleStatus = {peopleStatus}

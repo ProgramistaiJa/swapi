@@ -20,7 +20,8 @@ class App extends Component {
 
 
 
-            <Route exact path="/actors" component={Actors}/>
+            <Route exact path="/actors/" component={Actors}/>
+            <Route path="/actors/:pageId" component={Actors}/>
 
           </div>
       </Router>
